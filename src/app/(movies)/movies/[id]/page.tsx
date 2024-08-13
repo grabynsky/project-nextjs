@@ -13,10 +13,8 @@ const MovieByIdPage = async ({params}: { params: Params }) => {
     return (
         <div>
             <div>
-                <img
-                    src={urls.poster + getMovieById.poster_path}
-                    alt={getMovieById.title}
-                />
+
+                <img src={urls.poster + getMovieById.poster_path} alt={getMovieById.title} />
 
                 <p>{getMovieById.title}</p>
             </div>
