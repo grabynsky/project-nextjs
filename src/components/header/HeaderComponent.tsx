@@ -1,5 +1,6 @@
 import React from 'react';
 import Link from "next/link";
+import styles from "./header.module.css";
 
 const HeaderComponent = () => {
 
@@ -7,7 +8,8 @@ const HeaderComponent = () => {
 
     return (
         <div>
-            <Link href={'movies'}>movies</Link>
+            <Link href={'/movies'} className={styles.header}>movies</Link>
+            <Link href={'/genres'} className={styles.header}>genres</Link>
         </div>
     );
 };

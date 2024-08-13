@@ -1,7 +1,9 @@
 import React from 'react';
 import {movies} from "@/services/api.services";
 import {IMovie} from "@/models/IMovie";
-import MoviePage from "@/app/(movies)/movies/movie/page";
+import {urls} from "@/constants/urls";
+import "../../globals.css"
+import Link from "next/link";
 
 
 const MoviesPage = async () => {
@@ -10,12 +12,26 @@ const MoviesPage = async () => {
     let allMoviesResults: IMovie[] = allMovies.results;
 
     return (
-        <div>
+        <div className='divImage'>
             {
                 allMoviesResults.map((movie, index) =>
-                    <li key={index}>
-                        <MoviePage movie={movie}/>
-                    </li>)
+                    <div key={index} className='divMap'>
+
+                        <Link
+                            href={'/movies/' + movie.id}
+                        >
+                            <img
+                                src={urls.poster + `/${movie.poster_path}`}
+                                alt={movie.title}
+                                className='img'
+                            />
+
+                            <p className='bottomParagraph'>
+                                {movie.title}
+                            </p>
+                        </Link>
+
+                    </div>)
             }
         </div>
     );
