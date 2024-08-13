@@ -23,9 +23,8 @@ const MovieByIdPage = async ({params}: { params: Params }) => {
 
             <div><span><b>Genres:</b></span> {getMovieById.genres.map(genre => <p key={genre.id}>{genre.name}</p>)}
             </div>
+
             <div><b>Budget: </b>{getMovieById.budget}</div>
-
-
         </div>
     );
 };
