@@ -14,10 +14,9 @@ export const options = {
 
 export const movies = {
 
-    getAllMovies: async (): Promise<IMovies> => {
-        const allMovies = await fetch(urls.movies, options)
+    getAllMovies: async (id: number = 1): Promise<IMovies> => {
+        const allMovies = await fetch(urls.movies + `?page=${id}`, options)
             .then(response => response.json())
-
         return allMovies;
     },
     getGenreMovies: async (id: string, page: number = 1): Promise<IMovies> => {
