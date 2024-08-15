@@ -7,7 +7,7 @@ const HeaderComponent = () => {
 
 
     return (
-        <div>
+        <div className={styles.mainHeader}>
             <Link href={'/movie'} className={styles.header}>movies</Link>
             <Link href={'/genres'} className={styles.header}>genres</Link>
         </div>
