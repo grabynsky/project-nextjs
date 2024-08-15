@@ -19,6 +19,7 @@ const GenresPage = async () => {
                             className={styles.genreLink}
                         >
                            <Link
+                               // href={{pathname: '/genres/'+ genre.id, query: {data: JSON.stringify(genre.id)}}}
                                href={'/genres/'+ genre.id}
                                className={styles.genreLinkLink}
                            >

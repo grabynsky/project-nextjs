@@ -21,5 +21,11 @@ body {
 }
 
 .bottomParagraph {
-    font-size: 18px;
+    font-size: 14px;
+    color: cornflowerblue;
+}
+.link {
+    text-decoration: none;
+    text-transform: uppercase;
+
 }

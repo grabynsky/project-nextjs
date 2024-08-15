@@ -1,0 +1,27 @@
+.button {
+    border: none;
+    outline: none;
+    background-color: cornflowerblue;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.buttonLink {
+    text-decoration: none;
+    text-transform: uppercase;
+    color: white;
+    font-weight: 550;
+}
+
+.spanBetweenButton {
+    width: 30px;
+    height: 30px;
+    font-size: 20px;
+    margin: 0 20px;
+    padding: 5px 10px;
+    color: white;
+    border: none;
+    border-radius: 30px;
+    background-color: #426ec0;
+
+}

@@ -2,29 +2,31 @@ import React from 'react';
 import {movies} from "../../../services/api.services";
 import {IMovie} from "../../../models/IMovie";
 import {urls} from "../../../constants/urls";
-import "../../globals.css"
+import "../../globals.css";
 import Link from "next/link";
 import PaginationComponent from '../../../components/Pagination/PaginationComponent';
 import { IMovies } from '@/models/IMovies';
 
 
 const MoviesPage = async ({searchParams}:any) => {
+
     let allMovies:IMovies;
-    // const pageNum = JSON.parse(searchParams.data);
-    if(searchParams.data === undefined){
+
+    if(searchParams.page === undefined){
         allMovies = await movies.getAllMovies(1)
 
     } else {
-        const pageNum = JSON.parse(searchParams.data);
+        const pageNum = JSON.parse(searchParams.page);
         allMovies = await movies.getAllMovies(pageNum)
     }
-    // const pageNum = JSON.parse(searchParams.data);
-    // const allMovies = await movies.getAllMovies(pageNum);
+
     let allMoviesResults: IMovie[] = allMovies.results;
 
     return (
         <main>
+
             <PaginationComponent page={allMovies.page}/>
+
             <div className='divImage'>
                 {
                     allMoviesResults.map(
@@ -34,6 +36,7 @@ const MoviesPage = async ({searchParams}:any) => {
 
                                 <Link
                                     href={'/movie/' + movie.id}
+                                    className='link'
                                 >
                                     <img
                                         src={urls.poster + `/${movie.poster_path}`}
@@ -48,22 +51,7 @@ const MoviesPage = async ({searchParams}:any) => {
 
                             </div>)
                 }
-
-                {/*<Link href={/movie}></Link>*/}
-
             </div>
-
-
-            {/*<button>*/}
-            {/*    <Link href={{pathname: '/movie?page='+ allMovies.page,*/}
-            {/*    query: {data: JSON.stringify(allMovies)}*/}
-            {/*    }}*/}
-
-            {/*    >*/}
-            {/*        next*/}
-            {/*    </Link>*/}
-
-            {/*</button>*/}
         </main>
 
     );
